@@ -26,10 +26,6 @@ class cart_test(unittest.TestCase):
         cart_item = driver.find_element(By.CLASS_NAME, 'cart_item')
         self.assertTrue(cart_item.is_displayed())
 
-    def test_continue_shopping_button(self):
-        driver = self.driver
-        driver.get('https://www.saucedemo.com/inventory.html')
-        time.sleep(19)
 
 
 
