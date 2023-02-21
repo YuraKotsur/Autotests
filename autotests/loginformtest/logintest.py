@@ -12,15 +12,15 @@ class SaucedemoLogin(unittest.TestCase):
     def test_login_valid_credentials(self):
         driver = self.driver
         driver.get('https://www.saucedemo.com/')
-        loginfield = driver.find_element(By.XPATH, '//*[@id="user-name"]')
-        loginfield.send_keys('standard_user')
-        passwordField = driver.find_element(By.XPATH, '//*[@id="password"]')
-        passwordField.send_keys("secret_sauce")
-        loginButton = driver.find_element(By.XPATH, '//*[@id="login-button"]')
-        loginButton.click()
+        login_field = driver.find_element(By.XPATH, '//*[@id="user-name"]')
+        login_field.send_keys('standard_user')
+        password_field = driver.find_element(By.XPATH, '//*[@id="password"]')
+        password_field.send_keys("secret_sauce")
+        login_button = driver.find_element(By.XPATH, '//*[@id="login-button"]')
+        login_button.click()
         time.sleep(2)
-        self.title = driver.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/span')
-        self.assertTrue(self.title.is_displayed())
+        title = driver.find_element(By.XPATH, '//*[@id="header_container"]/div[2]/span')
+        self.assertTrue(title.is_displayed())
 
     def tearDown(self):
         self.driver.quit()
